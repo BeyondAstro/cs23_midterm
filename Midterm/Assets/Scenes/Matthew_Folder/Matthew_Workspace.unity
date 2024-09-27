@@ -873,7 +873,11 @@ MonoBehaviour:
   maxAmmo: 22
   fireRate: 0.5
   ammoText: {fileID: 1545927543}
-  moveSpeed: 2.5
+  moveSpeed: 5
+  dashSpeed: 15
+  dashDuration: 0.5
+  dashCooldown: 1
+  decelerationRate: 10
   rb2d: {fileID: 1635563719}
 --- !u!4 &1635563718
 Transform:

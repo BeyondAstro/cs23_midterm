@@ -10,7 +10,6 @@ public class DefaultBulletLogic : MonoBehaviour
 
     [Range(1, 10)]
     [SerializeField] private float lifeTime = 3f;
-    [SerializeField] private string ignoreCollisionTag = "IgnoreBulletCollisions"; // Tag to identify objects to ignore
 
     private Rigidbody2D rb2d;
 
@@ -21,7 +20,8 @@ public class DefaultBulletLogic : MonoBehaviour
         Destroy(gameObject, lifeTime);
 
         // Find all game objects with the specified tag
-        GameObject[] objectsToIgnore = GameObject.FindGameObjectsWithTag(ignoreCollisionTag);
+        string[] tags = { "IgnoreBulletCollisions", "Bullet" };
+        GameObject[] objectsToIgnore = FindGameObjectsWithTags(tags).ToArray();
         foreach (GameObject obj in objectsToIgnore)
         {
             Collider2D objCollider = obj.GetComponent<Collider2D>();
@@ -36,4 +36,16 @@ public class DefaultBulletLogic : MonoBehaviour
     {
         rb2d.velocity = transform.up * speed;
     }
+
+    private List<GameObject> FindGameObjectsWithTags(string[] tags)
+    {
+        List<GameObject> combinedList = new List<GameObject>();
+        for (int i = 0; i < tags.Length; i++)
+        {
+            GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag(tags[i]); 
+            combinedList.AddRange(taggedObjects); 
+        }
+        return combinedList;
+    }
 }
+
