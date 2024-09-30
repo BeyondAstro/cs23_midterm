@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9198342312005471302}
   - component: {fileID: 6818566498809699447}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1387081127496151684}
   - component: {fileID: 8774801515499997734}
   - component: {fileID: 1058909990835740972}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Crate_Movable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Transform:
   m_Children:
   - {fileID: 9198342312005471302}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1387081127496151684
 BoxCollider2D:
