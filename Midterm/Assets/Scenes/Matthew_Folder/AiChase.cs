@@ -12,7 +12,6 @@ public class AiChase : MonoBehaviour
     public GameObject[] player;
     private int bulletCollisionCount = 0; // Track the number of bullet collisions
     private float currentSpeed = 1f;
-    private float distance;
     private Rigidbody2D rb2d; // Reference to the Rigidbody2D component
     private Knockback knockback;
     private bool isKnocked = false;
