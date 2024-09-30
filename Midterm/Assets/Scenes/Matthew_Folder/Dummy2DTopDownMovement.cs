@@ -19,7 +19,6 @@ public class Dummy2DTopDownMovement : MonoBehaviour
     [SerializeField] public float dashSpeed = 15f;
     [SerializeField] public float dashDuration = 0.25f;
     [SerializeField] public float dashCooldown = 1f;
-    [SerializeField] public float decelerationRate = 10f; // Rate at which the dash decelerates
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
     private Transform m_transform;
@@ -49,8 +48,6 @@ public class Dummy2DTopDownMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
-        rb2d.velocity = moveInput * moveSpeed;
-
         
 
         if (Input.GetMouseButton(0) && currentAmmo > 0 && !isFiring)
@@ -62,11 +59,14 @@ public class Dummy2DTopDownMovement : MonoBehaviour
         {
             StartCoroutine(ReloadWithDelay());
         }
-
         if ((Input.GetKeyDown(KeyCode.Space) && !isDashing) && canDash) 
         {
             StartCoroutine(Dash());
         }
+    }
+
+    void FixedUpdate(){
+        rb2d.velocity = moveInput * moveSpeed;
     }
 
     private IEnumerator Dash()

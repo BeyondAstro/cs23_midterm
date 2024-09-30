@@ -31,10 +31,17 @@ public class DefaultBulletLogic : MonoBehaviour
             }
         }
     }
-
     private void Update()
     {
         rb2d.velocity = transform.up * speed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private List<GameObject> FindGameObjectsWithTags(string[] tags)

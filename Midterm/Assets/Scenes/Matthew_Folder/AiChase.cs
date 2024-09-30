@@ -12,6 +12,7 @@ public class AiChase : MonoBehaviour
     public GameObject[] player;
     private int bulletCollisionCount = 0; // Track the number of bullet collisions
     private float currentSpeed = 1f;
+    private float distance;
     private Rigidbody2D rb2d; // Reference to the Rigidbody2D component
     private Knockback knockback;
     private bool isKnocked = false;
@@ -26,7 +27,8 @@ public class AiChase : MonoBehaviour
 
     void Update()
     {
-        if (!isKnocked)
+        distance = Vector2.Distance(transform.position, target.position);
+        if (!isKnocked && distance <= 9f) // Check if the enemy is not knocked back
         {
             chase();
         }
@@ -36,7 +38,6 @@ public class AiChase : MonoBehaviour
         }
         else if (isKnocked)
         {
-            print("we're here");
             currentSpeed -= 10 * Time.deltaTime;
             Vector2 direction = -1 * (target.position - transform.position).normalized;
             rb2d.velocity = direction * currentSpeed;
@@ -45,10 +46,8 @@ public class AiChase : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Collision detected");
         if (collision.gameObject.CompareTag("Bullet"))
         {
-
             isKnocked = true;
             bulletCollisionCount++; // Increment the collision count
             Destroy(collision.gameObject); // Destroy the bullet
@@ -75,7 +74,5 @@ public class AiChase : MonoBehaviour
 
             // Move towards the player using Rigidbody2D
             rb2d.velocity = direction * currentSpeed;
-        
-
     }
 }
