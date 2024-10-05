@@ -15,7 +15,7 @@ public class AiChase : MonoBehaviour
     private Rigidbody2D rb2d; // Reference to the Rigidbody2D component
     private Knockback knockback;
     private bool isKnocked = false;
-
+    private float distance;
     void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player");
@@ -68,10 +68,17 @@ public class AiChase : MonoBehaviour
             // Continuously increase the speed
             currentSpeed += acceleration * Time.deltaTime;
         }
-            // Calculate the direction towards the player
-            Vector2 direction = (target.position - transform.position).normalized;
+        // Calculate the direction towards the player
+        Vector2 direction = (target.position - transform.position).normalized;
 
-            // Move towards the player using Rigidbody2D
-            rb2d.velocity = direction * currentSpeed;
+        // Move towards the player using Rigidbody2D
+        rb2d.velocity = direction * currentSpeed;
+    }
+
+    private bool[,] GenerateWalkableMap()
+    {
+        // Implement this method to generate the walkable map based on your game's terrain
+        // For example, you can use a 2D array where true represents walkable tiles and false represents obstacles
+        return new bool[100, 100]; // Placeholder
     }
 }

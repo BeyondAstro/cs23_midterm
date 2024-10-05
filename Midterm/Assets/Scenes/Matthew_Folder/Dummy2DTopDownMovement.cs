@@ -40,6 +40,10 @@ public class Dummy2DTopDownMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return; // Skip the rest of the update logic if the game is paused
+        }
         RotateTowardsMouse();
         if (isDashing)
         {
@@ -79,7 +83,7 @@ public class Dummy2DTopDownMovement : MonoBehaviour
             dashDirection = new Vector2(1, 0).normalized;
         }
         
-        float dashTime = 0f;
+        float dashTime = 1.5f;
 
         while (dashTime < dashDuration)
         {
