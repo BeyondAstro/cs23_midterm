@@ -8,6 +8,9 @@ TagManager:
   - Bullet
   - GameHandler
   - Enemy
+  - CrateStar
+  - CrateSquare
+  - CrateCircle
   layers:
   - Default
   - TransparentFX
