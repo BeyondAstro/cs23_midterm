@@ -8,6 +8,7 @@ public class DamageIFrame : MonoBehaviour
     public TMP_Text healthText;
     public GameObject model1;
     public GameObject model2;
+    public GameObject player;
     int health = 5;
     bool Invincible = false;
     float IFrameTime = 1.5f;
@@ -20,6 +21,7 @@ public class DamageIFrame : MonoBehaviour
         if (c.gameObject.CompareTag("Enemy") && !Invincible) {
             health--;
             updateHealth();
+            if (health == 0) player.SetActive(false);
             StartCoroutine(BecomeTemporarilyInvincible());
         }
     }
