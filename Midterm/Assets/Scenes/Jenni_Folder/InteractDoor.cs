@@ -12,7 +12,7 @@ public class InteractDoor : MonoBehaviour
       private GameObject player;
       public GameObject exitPoint;
       public bool useObjective = false;
-      public ExitObjective exitObjective; // Reference to the ExitObjective component
+      public ExitObjective exitObjective = null; // Reference to the ExitObjective component
 
 
       void Start()
@@ -25,7 +25,7 @@ public class InteractDoor : MonoBehaviour
       {
             if (player != null)
             {
-                  if (useObjective == null || (useObjective = true && exitObjective.objectiveComplete))
+                  if (useObjective == false || (useObjective = true && exitObjective.objectiveComplete))
                   {
                         float distance = Vector2.Distance(exitPoint.transform.position, player.transform.position);
                         if (distance <= msgDistanceThreshold)
@@ -35,7 +35,6 @@ public class InteractDoor : MonoBehaviour
                               {
                                     EnterDoor();
                               }
-
                         }
                         else
                         {
