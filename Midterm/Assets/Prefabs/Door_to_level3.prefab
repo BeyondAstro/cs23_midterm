@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6155490018623303238}
   - component: {fileID: 209546869055826917}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door_to_level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b57a2564927ab43bf9f9ca04134af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: level2
+  NextLevel: level3
   msgPressE: {fileID: 7050482704044731055}
   canPressE: 0
 --- !u!61 &209546869055826917
