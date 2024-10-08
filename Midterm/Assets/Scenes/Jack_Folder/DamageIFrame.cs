@@ -13,7 +13,7 @@ public class DamageIFrame : MonoBehaviour
     bool Invincible = false;
     float IFrameTime = 1.5f;
     float invincibilityDeltaTime = 0.15f;
-    private JustRestartGame restartGame;
+    public JustRestartGame restartGame;
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D c)

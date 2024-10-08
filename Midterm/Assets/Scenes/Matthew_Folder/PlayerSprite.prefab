@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1253751181018571085}
   - component: {fileID: 6034661959107775241}
   - component: {fileID: 691147259207681768}
+  - component: {fileID: 3087639733714134818}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Player
@@ -67,7 +68,7 @@ Transform:
   - {fileID: 4768980729024442756}
   - {fileID: 5295813213985468498}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &344674020522931339
 Rigidbody2D:
@@ -131,9 +132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 0}
-  model1: {fileID: 0}
-  model2: {fileID: 0}
-  player: {fileID: 0}
+  model1: {fileID: 7832776126477981458}
+  model2: {fileID: 3025635628658231967}
+  player: {fileID: 863221359036681085}
+  health: 5
+  restartGame: {fileID: 3087639733714134818}
 --- !u!70 &691147259207681768
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -169,6 +172,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.32, y: -0.15}
   m_Size: {x: 0.85, y: 1}
   m_Direction: 0
+--- !u!114 &3087639733714134818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863221359036681085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae24c2c8ce62b4b56bfa7e12046f67da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &922922582443980145
 GameObject:
   m_ObjectHideFlags: 0
