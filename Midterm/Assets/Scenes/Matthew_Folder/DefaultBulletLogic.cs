@@ -20,7 +20,7 @@ public class DefaultBulletLogic : MonoBehaviour
         Destroy(gameObject, lifeTime);
 
         // Find all game objects with the specified tag
-        string[] tags = { "IgnoreBulletCollisions", "Bullet" };
+        string[] tags = { "IgnoreBulletCollisions", "Bullet", "Lava" };
         GameObject[] objectsToIgnore = FindGameObjectsWithTags(tags).ToArray();
         foreach (GameObject obj in objectsToIgnore)
         {

@@ -35,6 +35,16 @@ public class Dummy2DTopDownMovement : MonoBehaviour
         m_transform = this.transform;
         currentAmmo = maxAmmo;
         UpdateAmmoText();
+        string[] tags = { "Bullet" };
+        GameObject[] objectsToIgnore = FindGameObjectsWithTags(tags).ToArray();
+        foreach (GameObject obj in objectsToIgnore)
+        {
+            Collider2D objCollider = obj.GetComponent<Collider2D>();
+            if (objCollider != null)
+            {
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), objCollider);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -44,7 +54,6 @@ public class Dummy2DTopDownMovement : MonoBehaviour
         {
             return; // Skip the rest of the update logic if the game is paused
         }
-        RotateTowardsMouse();
         if (isDashing)
         {
             return;
@@ -58,7 +67,6 @@ public class Dummy2DTopDownMovement : MonoBehaviour
         {
             StartCoroutine(FireContinuously());
         }
-
         if (Input.GetKeyDown(KeyCode.R) && !isReloading)
         {
             StartCoroutine(ReloadWithDelay());
@@ -116,14 +124,6 @@ public class Dummy2DTopDownMovement : MonoBehaviour
         UpdateAmmoText();
     }
 
-    private void RotateTowardsMouse()
-    {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePosition - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-    }
-
     private IEnumerator ReloadWithDelay()
     {
         isReloading = true;
@@ -136,5 +136,28 @@ public class Dummy2DTopDownMovement : MonoBehaviour
     private void UpdateAmmoText()
     {
         ammoText.SetText("Ammo: " + currentAmmo); // Update the text with the current ammo count
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Lava"))
+        {
+            DamageIFrame damageIFrame = GetComponent<DamageIFrame>();
+            if (damageIFrame != null)
+            {
+                damageIFrame.damageLogic();
+            }
+        }
+    }
+
+    private List<GameObject> FindGameObjectsWithTags(string[] tags)
+    {
+        List<GameObject> combinedList = new List<GameObject>();
+        for (int i = 0; i < tags.Length; i++)
+        {
+            GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag(tags[i]); 
+            combinedList.AddRange(taggedObjects); 
+        }
+        return combinedList;
     }
 }

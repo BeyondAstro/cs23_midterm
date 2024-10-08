@@ -9,7 +9,7 @@ public class DamageIFrame : MonoBehaviour
     public GameObject model1;
     public GameObject model2;
     public GameObject player;
-    int health = 5;
+    public int health = 5;
     bool Invincible = false;
     float IFrameTime = 1.5f;
     float invincibilityDeltaTime = 0.15f;
@@ -19,10 +19,7 @@ public class DamageIFrame : MonoBehaviour
     {
         Debug.Log("Collision Detected");
         if (c.gameObject.CompareTag("Enemy") && !Invincible) {
-            health--;
-            updateHealth();
-            if (health == 0) player.SetActive(false);
-            StartCoroutine(BecomeTemporarilyInvincible());
+            damageLogic();
         }
     }
 
@@ -48,5 +45,12 @@ public class DamageIFrame : MonoBehaviour
 
     private void updateHealth() {
         healthText.SetText("Health: " + health);
+    }
+
+    public void damageLogic() {
+        health--;
+        updateHealth();
+        if (health == 0) player.SetActive(false);
+        StartCoroutine(BecomeTemporarilyInvincible());
     }
 }

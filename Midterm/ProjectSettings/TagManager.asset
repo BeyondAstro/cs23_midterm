@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - IgnoreBulletCollisions
   - Obstacle
+  - Enemy
+  - Lava
   layers:
   - Default
   - TransparentFX
