@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6266479726577391884}
   m_Layer: 0
   m_Name: EnemyDefault
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,15 @@ MonoBehaviour:
   target: {fileID: 0}
   knockbackForce: 4
   enemyHealth: 4
-  player: []
+  players: []
+  player: {fileID: 0}
+  chaseDistance: 10
+  moveSpeed: 2
+  pathfindingInterval: 0.5
+  topBorder: {fileID: 0}
+  bottomBorder: {fileID: 0}
+  leftBorder: {fileID: 0}
+  rightBorder: {fileID: 0}
 --- !u!114 &5967145479573434205
 MonoBehaviour:
   m_ObjectHideFlags: 0

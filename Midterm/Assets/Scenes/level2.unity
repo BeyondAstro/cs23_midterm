@@ -858,6 +858,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 996559384}
     - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
+      propertyPath: useObjective
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
       propertyPath: exitObjective
       value: 
       objectReference: {fileID: 1244329276}
@@ -1098,6 +1102,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1387081127496151684, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387081127496151684, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387081127496151684, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -1107,11 +1119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541103831040853823, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.85
+      value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 2541103831040853823, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2541103831040853823, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1164,6 +1176,14 @@ PrefabInstance:
     - target: {fileID: 6818566498809699447, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198342312005471302, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198342312005471302, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1290,14 +1310,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018b424f5f11b419ebd78d0ec6a74fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  successDistanceThreshold: 1
+  successDistanceThreshold: 0.5
   objectivePoints:
   - {fileID: 1309532427}
   - {fileID: 329499222}
   - {fileID: 1863922986}
   objectives:
-  - {fileID: 1309532427}
-  - {fileID: 329499222}
+  - {fileID: 223654888}
+  - {fileID: 1634199449}
   - {fileID: 1560984031}
   objectiveComplete: 0
   blocker: {fileID: 1244329275}
@@ -1647,7 +1667,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8.971276, y: 0.00000011920929}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.156435, y: 1.2658403}
   m_Direction: 0
 --- !u!1 &1620035043

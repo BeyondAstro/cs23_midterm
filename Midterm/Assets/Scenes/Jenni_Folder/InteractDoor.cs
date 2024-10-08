@@ -8,7 +8,7 @@ public class InteractDoor : MonoBehaviour
       public GameObject msgPressE;
       public bool canPressE = false;
       public float msgDistanceThreshold = 3f; // Distance threshold for enabling interaction
-      public float exitDistanceThreshold = 1f; // Distance threshold for entering the door
+      public float exitDistanceThreshold = 0.5f; // Distance threshold for entering the door
       private GameObject player;
       public GameObject exitPoint;
       public bool useObjective = false;
@@ -25,7 +25,24 @@ public class InteractDoor : MonoBehaviour
       {
             if (player != null)
             {
-                  if (useObjective == false || (useObjective = true && exitObjective.objectiveComplete))
+                  if ((useObjective == true && exitObjective.objectiveComplete))
+                  {
+                        float distance = Vector2.Distance(exitPoint.transform.position, player.transform.position);
+                        if (distance <= msgDistanceThreshold)
+                        {
+                              msgPressE.SetActive(true);
+                              if (distance <= exitDistanceThreshold && Input.GetKeyDown(KeyCode.E))
+                              {
+                                    EnterDoor();
+                              }
+                        }
+                        else
+                        {
+                              msgPressE.SetActive(false);
+
+                        }
+                  }
+                  else if (useObjective == false)
                   {
                         float distance = Vector2.Distance(exitPoint.transform.position, player.transform.position);
                         if (distance <= msgDistanceThreshold)

@@ -18,7 +18,8 @@ public class ExitObjective : MonoBehaviour
     }
     void Update()
     {
-        if (objectiveComplete == false && CheckObjectiveCompletion()){
+        if (objectiveComplete == false && CheckObjectiveCompletion())
+        {
             blocker.SetActive(false);
             objectiveComplete = true;
         }
@@ -28,7 +29,11 @@ public class ExitObjective : MonoBehaviour
     {
         for (int i = 0; i < objectives.Length; i++)
         {
-            if (Vector3.Distance(objectivePoints[i].transform.position, objectives[i].transform.position) > successDistanceThreshold)
+
+            float distance = Vector3.Distance(objectivePoints[i].transform.position, objectives[i].transform.position);
+            Debug.Log($"Checking objective {i}: Distance = {distance}");
+
+            if (Vector3.Distance(objectivePoints[i].transform.position, objectives[i].transform.position) >= successDistanceThreshold)
             {
                 return false;
             }

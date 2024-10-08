@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level4_lava.unity
     guid: 17b2ecb57744ee64ea1991a5e3413fcf
+  - enabled: 1
+    path: Assets/Scenes/ToBeContinued.unity
+    guid: 2fedc00e5db304184839d8e60745270f
   m_configObjects: {}

@@ -20,4 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
     public void resetScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void resetGame() {
+        SceneManager.LoadScene(SceneManager.GetSceneByName("level1").buildIndex);
+    }
 }
