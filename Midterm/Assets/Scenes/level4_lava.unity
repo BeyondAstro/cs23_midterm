@@ -5932,7 +5932,7 @@ MonoBehaviour:
   msgPressE: {fileID: 1763957303}
   canPressE: 0
   msgDistanceThreshold: 3
-  exitDistanceThreshold: 1
+  exitDistanceThreshold: 1.3
   exitPoint: {fileID: 2031705071}
   useObjective: 1
   exitObjective: {fileID: 161318177}

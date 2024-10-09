@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: exitObjective
       value: 
       objectReference: {fileID: 1244329276}
+    - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
+      propertyPath: exitDistanceThreshold
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7440179211536253937, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
       propertyPath: m_RootOrder
       value: 5
