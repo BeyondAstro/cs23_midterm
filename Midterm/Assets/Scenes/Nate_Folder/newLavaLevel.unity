@@ -627,11 +627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541103831040853823, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.37
+      value: -4.45
       objectReference: {fileID: 0}
     - target: {fileID: 2541103831040853823, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.92
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 2541103831040853823, guid: 7812b4d2f149449d8aac478fca414d8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4902,7 +4902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421703630106522874, guid: f5d4b3d0807aa4096b60aa2e8d1adb08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.51
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 1421703630106522874, guid: f5d4b3d0807aa4096b60aa2e8d1adb08, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5082,9 +5082,11 @@ MonoBehaviour:
   objectivePoints:
   - {fileID: 1565889723}
   - {fileID: 1003432723}
+  - {fileID: 224250428}
   objectives:
   - {fileID: 543637113}
   - {fileID: 1944670163}
+  - {fileID: 383811930}
   objectiveComplete: 0
   blocker: {fileID: 1170430907}
 --- !u!212 &1170430909
