@@ -342,11 +342,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 1
   maxSpeed: 3.5
-  target: {fileID: 0}
+  target: {fileID: 3148407210058672755}
   knockbackForce: 4
   enemyHealth: 4
   players: []
-  player: {fileID: 0}
+  player: {fileID: 3148407210058672755}
   chaseDistance: 10
   moveSpeed: 2
   pathfindingInterval: 0.5
@@ -354,6 +354,10 @@ MonoBehaviour:
   bottomBorder: {fileID: 562743334}
   leftBorder: {fileID: 1604147405}
   rightBorder: {fileID: 1053085628}
+  wallsTilemap: {fileID: 0}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &487563440
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3949,6 +3953,8 @@ MonoBehaviour:
   model1: {fileID: 1446301613}
   model2: {fileID: 498401791}
   player: {fileID: 0}
+  health: 5
+  restartGame: {fileID: 0}
 --- !u!1001 &977015374358751869
 PrefabInstance:
   m_ObjectHideFlags: 0

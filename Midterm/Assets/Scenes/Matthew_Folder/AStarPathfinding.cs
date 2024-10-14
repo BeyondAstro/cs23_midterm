@@ -29,6 +29,7 @@ public class AStarPathfinding : MonoBehaviour
 
         while (openList.Count > 0)
         {
+            Debug.Log("Pathfinding: " + openList.Count);
             Node currentNode = openList[0];
             for (int i = 1; i < openList.Count; i++)
             {

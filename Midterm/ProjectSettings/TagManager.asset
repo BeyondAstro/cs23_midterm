@@ -9,11 +9,12 @@ TagManager:
   - Obstacle
   - Enemy
   - Lava
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - Bullet
