@@ -31,8 +31,6 @@ public class PressurePlateActivate : MonoBehaviour
         {
 
             float distance = Vector3.Distance(objectivePoints[i].transform.position, objectives[i].transform.position);
-            Debug.Log($"Checking objective {i}: Distance = {distance}");
-
             if (Vector3.Distance(objectivePoints[i].transform.position, objectives[i].transform.position) >= successDistanceThreshold)
             {
                 return false;

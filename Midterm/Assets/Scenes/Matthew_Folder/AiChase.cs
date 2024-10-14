@@ -8,7 +8,6 @@ public class AiChase : MonoBehaviour
 {
     [SerializeField] private float acceleration = 2f;
     [SerializeField] private float maxSpeed = 3.5f;
-    [SerializeField] private Transform target;
     [SerializeField] private float knockbackForce = 50f; // Knockback force
     [SerializeField] private int enemyHealth = 4; // Track the number of bullet collisions
     [SerializeField] private float deceleration = 1f; // Deceleration rate
@@ -54,7 +53,7 @@ public class AiChase : MonoBehaviour
     }
     void Update()
     {
-        distance = Vector2.Distance(transform.position, target.position);
+        distance = Vector2.Distance(transform.position, player.position);
 
         // Unfinished astar implemention. Will be revisted
 
@@ -79,9 +78,9 @@ public class AiChase : MonoBehaviour
         //     Debug.Log(path.Count); 
         //     Debug.Log(currentPathIndex);
         //     Debug.Log(path[currentPathIndex]);
-        //     Vector2 targetPosition = new Vector2(path[currentPathIndex].x, path[currentPathIndex].y);
-        //     transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-        //     if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        //     Vector2 playerPosition = new Vector2(path[currentPathIndex].x, path[currentPathIndex].y);
+        //     transform.position = Vector2.MoveTowards(transform.position, playerPosition, moveSpeed * Time.deltaTime);
+        //     if (Vector2.Distance(transform.position, playerPosition) < 0.1f)
         //     {
         //         currentPathIndex++;
         //     }
@@ -97,7 +96,7 @@ public class AiChase : MonoBehaviour
         else if (isKnocked)
         {
             currentSpeed -= 10 * Time.deltaTime;
-            Vector2 direction = -1 * (target.position - transform.position).normalized;
+            Vector2 direction = -1 * (player.position - transform.position).normalized;
             rb2d.velocity = direction * currentSpeed;
         }
         else
@@ -114,19 +113,10 @@ public class AiChase : MonoBehaviour
         int layerMask = LayerMask.GetMask("Default") & ~LayerMask.GetMask("Ignore Raycast"); // Exclude the "Enemy" layer
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, chaseDistance, layerMask);
-
-        Debug.DrawLine(transform.position, player.position, Color.red); // Visualize the raycast
-
         if (hit.collider != null)
         {
-            Debug.Log("Raycast hit: " + hit.collider.name);
             return hit.collider.transform == player;
         }
-        else
-        {
-            Debug.Log("Raycast did not hit anything");
-        }
-
         return false;
     }
 
@@ -155,7 +145,7 @@ public class AiChase : MonoBehaviour
             currentSpeed += acceleration * Time.deltaTime;
         }
         // Calculate the direction towards the player
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector2 direction = (player.position - transform.position).normalized;
 
         // Move towards the player using Rigidbody2D
         rb2d.velocity = direction * currentSpeed;
