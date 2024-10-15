@@ -13636,6 +13636,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3825462628951789411, guid: 3f6c5cb38db584aa1a48b98f86158ddd, type: 3}
+      propertyPath: m_Name
+      value: SquareCrateObjective
+      objectReference: {fileID: 0}
     - target: {fileID: 4273628768196990637, guid: 3f6c5cb38db584aa1a48b98f86158ddd, type: 3}
       propertyPath: m_Name
       value: Square_Plate
