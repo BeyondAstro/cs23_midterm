@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square_Plate
       objectReference: {fileID: 0}
+    - target: {fileID: 6474306072579534395, guid: 3f6c5cb38db584aa1a48b98f86158ddd, type: 3}
+      propertyPath: objectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 1634199449}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1376,6 +1380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 671451703216622105, guid: fddc1f67bb5824133a5bc3dcc7449c5f, type: 3}
+      propertyPath: objectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 1560984031}
     - target: {fileID: 3257258457931319125, guid: fddc1f67bb5824133a5bc3dcc7449c5f, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2046,6 +2054,10 @@ PrefabInstance:
       propertyPath: objectiveComplete
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1770819341339263146, guid: ca6e9580dc9d044e687f2ff834a9c838, type: 3}
+      propertyPath: objectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 223654888}
     - target: {fileID: 2884341072224361248, guid: ca6e9580dc9d044e687f2ff834a9c838, type: 3}
       propertyPath: m_SortingOrder
       value: 40
@@ -5888,7 +5900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013605172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.73, y: 5.89, z: 0}
+  m_LocalPosition: {x: 2.53, y: 1.76, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
