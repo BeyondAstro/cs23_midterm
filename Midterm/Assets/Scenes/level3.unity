@@ -2759,9 +2759,21 @@ PrefabInstance:
       value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
+      propertyPath: NextLevel
+      value: LavaTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
       propertyPath: exitPoint
       value: 
       objectReference: {fileID: 2145762848}
+    - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
+      propertyPath: msgPressE
+      value: 
+      objectReference: {fileID: 1024799182}
+    - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
+      propertyPath: exitObjective
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6155490018623303238, guid: 1ecdec6df69427947b62925571a27c5d, type: 3}
       propertyPath: exitDistanceThreshold
       value: 1.3

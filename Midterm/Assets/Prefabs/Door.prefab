@@ -50,6 +50,11 @@ MonoBehaviour:
   NextLevel: level2
   msgPressE: {fileID: 7050482704044731055}
   canPressE: 0
+  msgDistanceThreshold: 3
+  exitDistanceThreshold: 0.5
+  exitPoint: {fileID: 0}
+  useObjective: 0
+  exitObjective: {fileID: 0}
 --- !u!61 &209546869055826917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8833128464656181119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.08, y: 3.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
