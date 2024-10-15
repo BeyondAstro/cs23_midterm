@@ -9,6 +9,6 @@ public class PickUp : MonoBehaviour
     void OnCollisionEnter2D(Collision2D c)
     {
         Debug.Log("Collision Detected");
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
 }
